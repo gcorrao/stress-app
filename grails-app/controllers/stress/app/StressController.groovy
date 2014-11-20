@@ -19,16 +19,23 @@ class StressController {
 	
 	// CPU Burn method
 	def consumeCpu(start, cpu) {
-		def i = 0
+		def i = 1
 		while(true) {
-			if(!(i%1000) && !remainingTimeTo(start, cpu))
-				break;
+			if(!(i%100000)) {
+				def remain = remainingTimeTo(start, cpu)
+				println "Checking CPU: remains: $remain cpu:$cpu start:$start"
+				if(!remain)
+					break;
+			}
+			i++
 		}
 	}
 	
-	// Calculates remaining time to a given objectivc	def remainingTimeTo(start, time) {
+	// Calculates remaining time to a given objectivc	
+	def remainingTimeTo(start, time) {
 		def now = System.currentTimeMillis();
-		def diff = now - (start + time)
+		def diff = (start + time) - now
+		println "now: $now start:$start diff: $diff"
 		diff = diff > 0 ? diff : 0
 	}
 	
@@ -45,8 +52,8 @@ class StressController {
 	
 	def sleepRemainingTime(start, time) {
 		def toSleep;
-		
 		while(toSleep = remainingTimeTo(start, time)) {
+			println "I've to sleep for $toSleep ms"
 			Thread.sleep(toSleep)
 		}
 	}
