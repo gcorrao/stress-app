@@ -7,7 +7,7 @@ class StressController {
 		def wait = Integer.parseInt(params.wait)
 		def cpu  = Integer.parseInt(params.cpu)
 		
-		println "CPU: $cpu WAIT: $wait SIZE: $size"
+		println "VERSION 2 MONO CPU: $cpu WAIT: $wait SIZE: $size"
 		
 		def out = buildDummyOutput(size)
 		consumeCpu(start, cpu)
@@ -44,7 +44,7 @@ class StressController {
 		StringBuffer buff = new StringBuffer();
 		size /= 10
 		size.times() {
-			buff.append("0123456789")
+			buff.append("V223456789")
 		}
 		buff.toString()
 	}
