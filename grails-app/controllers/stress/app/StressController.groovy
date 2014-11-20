@@ -30,7 +30,7 @@ class StressController {
 			i++
 		}
 	}
-	
+
 	// Calculates remaining time to a given objectivc	
 	def remainingTimeTo(start, time) {
 		def now = System.currentTimeMillis();
