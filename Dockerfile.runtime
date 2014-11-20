@@ -1,4 +1,4 @@
-FROM mlarq/production-tomcat:0.1
+FROM mlarq/tomcat-runtime:0.1
 
 ADD ./ /deploy/
 
