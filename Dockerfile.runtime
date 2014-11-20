@@ -6,4 +6,4 @@ ENV JAVA_OPTS -server -Xms512m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=128m
 
 EXPOSE 8080
 
-CMD ["$CATALINA_HOME/bin/catalina.sh", "run"]
+CMD $CATALINA_HOME/bin/catalina.sh run
