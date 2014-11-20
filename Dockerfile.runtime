@@ -2,8 +2,7 @@ FROM mlarq/tomcat-runtime:0.1
 
 ADD ./ /deploy/
 
-RUN rm -rf /$CATALINA_HOME/webapps/*
-RUN cp /deploy/* $CATALINA_HOME/webapps
+RUN rm -rf /$CATALINA_HOME/webapps/* && mv /deploy/*.war $CATALINA_HOME/webapps/ROOT.war
 
 ENV JAVA_OPTS -server -Xms512m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=128m
 
