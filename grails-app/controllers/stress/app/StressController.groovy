@@ -26,8 +26,7 @@ class StressController {
 		}
 	}
 	
-	// Calculates remaining time to a given objective
-	def remainingTimeTo(start, time) {
+	// Calculates remaining time to a given objectivc	def remainingTimeTo(start, time) {
 		def now = System.currentTimeMillis();
 		def diff = now - (start + time)
 		diff = diff > 0 ? diff : 0
