@@ -1,9 +1,4 @@
 FROM mlarq/tomcat-runtime:0.2
-
 ADD ./ $CATALINA_HOME/webapps/
-
-ENV JAVA_OPTS -server -Xms512m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=128m -javaagent:/apps/newrelic/newrelic.jar -Dnewrelic.config.file=/apps/newrelic/newrelic.yml -Dnewrelic.config.app_name=arquitectura-stress-app -Dnewrelic.config.license_key=$NEWRELIC_KEY
-
 EXPOSE 8080
-
 CMD env && $CATALINA_HOME/bin/catalina.sh run
