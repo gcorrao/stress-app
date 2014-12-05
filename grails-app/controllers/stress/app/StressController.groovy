@@ -7,7 +7,7 @@ class StressController {
 		def wait = Integer.parseInt(params.wait)
 		def cpu  = Integer.parseInt(params.cpu)
 		
-		println "VERSION 2 MONO CPU: $cpu WAIT: $wait SIZE: $size"
+		println "CPU: $cpu WAIT: $wait SIZE: $size"
 		
 		def out = buildDummyOutput(size)
 		consumeCpu(start, cpu)
