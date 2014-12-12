@@ -1,7 +1,7 @@
-package ping
+package ping.app
 
 class PingController {
     def index() { 
-		render "pong"
-	}
+        render "pong"
+    }
 }

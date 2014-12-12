@@ -1,4 +1,4 @@
-package env
+package env.app
 
 class EnvController {
     def index() { 
