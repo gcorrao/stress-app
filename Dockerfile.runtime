@@ -1,4 +1,4 @@
-FROM mlarq/tomcat-runtime:0.2
+FROM mlarq/tomcat-runtime:0.3
 ADD ./ $CATALINA_HOME/webapps/
 EXPOSE 8080
 CMD $CATALINA_HOME/bin/catalina.sh run
