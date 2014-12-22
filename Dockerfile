@@ -14,6 +14,7 @@ ENV PATH $PATH:$GRAILS_HOME/bin
 #Install grails basic dependencies
 WORKDIR /
 RUN grails create-app --non-interactive app && cd app && grails refresh-dependencies --non-interactive
-
+ADD . /sources
+WORKDIR /sources
 CMD grails refresh-dependencies --non-interactive && grails war --non-interactive /output/ROOT.war
 
