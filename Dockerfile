@@ -7,7 +7,7 @@ ENV JAVA_HOME /apps/jdk
 ENV PATH $PATH:$JAVA_HOME/bin
 
 #Install grails
-RUN apt-get --yes --force-yes install unzip && curl --silent --location --show-error --verbose "http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.4.4.zip" >/tmp/grails.zip && unzip /tmp/grails.zip -d /apps && mv grails-2.4.4/ grails
+RUN apt-get --yes --force-yes install unzip && curl --silent --location --show-error --verbose "http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.4.4.zip" >/tmp/grails.zip && unzip /tmp/grails.zip -d /apps && mv /apps/grails-2.4.4/ /apps/grails
 ENV GRAILS_HOME /apps/grails
 ENV PATH $PATH:$GRAILS_HOME/bin
 
