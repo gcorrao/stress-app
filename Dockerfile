@@ -16,5 +16,5 @@ WORKDIR /
 RUN grails create-app --non-interactive app && cd app && grails refresh-dependencies --non-interactive
 ADD . /sources
 WORKDIR /sources
-CMD grails refresh-dependencies --non-interactive && grails war --non-interactive /output/ROOT.war
+CMD grails refresh-dependencies --non-interactive && echo $APP_VERSION >> grails-app/views/index.gsp && grails war --non-interactive /output/ROOT.war
 
