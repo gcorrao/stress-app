@@ -1,2 +1,2 @@
-FROM mlarq/grails:2.4.3
+FROM mlarq/grails:2.4.4
 
